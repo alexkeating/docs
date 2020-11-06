@@ -33,14 +33,14 @@ and confirm that all systems are operational. If some systems seem to have issue
 
 Furthermore, the to-do app will interact with a smart contract deployed as `ST25GX7MJA4FGEYYH5E7EBW30BYA4VG4VC1XETXXZ.todo-registry`, please verify that this contract exists by searching for it in the sandbox of the [testnet explorer](https://testnet-explorer.blockstack.org/txid/ST25GX7MJA4FGEYYH5E7EBW30BYA4VG4VC1XETXXZ.todo-registry).
 
-Alternatively, you can take the [contract source code](https://github.com/friedger/blockstack-todos/blob/tut/step1/contracts/todo-registry.clar) and deploy the contract as described in the [hello world tutorial](/smart-contracts/hello-world-tutorial#step-5-deploy-the-contract). Then you just have to use your own contract address and name in this tutorial.
+Alternatively, you can take the [contract source code](https://github.com/friedger/blockstack-todos/blob/tut/step1/contracts/todo-registry.clar) and deploy the contract as described in the [hello world tutorial](/write-smart-contracts/hello-world-tutorial#step-5-deploy-the-contract). Then you just have to use your own contract address and name in this tutorial.
 
 ### Tutorials
 
 You should have followed the instructions of the to-do app tutorial. You should have the code ready on your local machine. It is also helpful to have a basic understanding of Clarity as explained in the counter tutorial. If you are using mocknet or a new, empty testnet you can create transactions following the tutorial about signing transactions.
 
 [@page-reference | grid]
-| /authentication/building-todo-app, /smart-contracts/counter-tutorial, /smart-contracts/signing-transactions
+| /authentication/building-todo-app, /write-smart-contracts/counter-tutorial, /write-smart-contracts/signing-transactions
 
 ### Check your to-do app
 
@@ -122,7 +122,7 @@ export const PublicUrlRegistrar = ({ userSession }) => {
 };
 ```
 
-It is a simple button that calls `doContractCall` method of the Connect library when clicked. The method makes an api call to the Stacks authenticator. The authenticator creates a contract call transaction that is signed by the user and then it is broadcasted to the Stacks 2.0 blockchain as explained in the [transaction signing tutorial](/smart-contracts/signing-transactions).
+It is a simple button that calls `doContractCall` method of the Connect library when clicked. The method makes an api call to the Stacks authenticator. The authenticator creates a contract call transaction that is signed by the user and then it is broadcasted to the Stacks 2.0 blockchain as explained in the [transaction signing tutorial](/write-smart-contracts/signing-transactions).
 
 Note how the arguments are created using `bufferCVFromString`. There are similar methods for all other Clarity types, like `uintCV` or `trueCV`. See the [documentation](https://github.com/blockstack/stacks-transactions-js#constructing-clarity-values) of the stacks-transactions library for more details.
 
@@ -453,7 +453,7 @@ In addition to `tx_result`, the transaction object also contains a timestamp (`b
 
 ## Fetch the first to-do list
 
-There are two other ways to get state information from the blockchain: read-only functions and data map entries. Read-only functions were already discussed in the [Clarity counter tutorial](/smart-contracts/counter-tutorial). They do not require a transaction to complete. Data maps in Clarity are maps that can be read by any user. See the [Clarity reference](https://docs.blockstack.org/references/language-functions#define-map) for more details.
+There are two other ways to get state information from the blockchain: read-only functions and data map entries. Read-only functions were already discussed in the [Clarity counter tutorial](/write-smart-contracts/counter-tutorial). They do not require a transaction to complete. Data maps in Clarity are maps that can be read by any user. See the [Clarity reference](https://docs.blockstack.org/references/language-functions#define-map) for more details.
 
 The `todo-registry` contract defines a read-only function `owner-of?` that returns the owner of a registry entry and a data map for details about entries:
 
