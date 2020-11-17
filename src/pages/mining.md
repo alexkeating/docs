@@ -47,14 +47,9 @@ After this runs, you'll probably see some installation logs, and at the end you 
 }
 ```
 
-We need to get some testnet BTC to that address. Grab the `btcAddress` field, and call the BTC faucet:
+We need to get some testnet BTC to that address. Grab the `btcAddress` field, and paste it into [this Bitcoin testnet faucet](https://tbtc.bitaps.com/).
 
-```bash
-# replace <btc_address> with `btcAddress` property from your keychain
-curl -XPOST "https://stacks-node-api.blockstack.org/extended/v1/faucets/btc?address=<btc_address>" | json_pp
-```
-
-You'll be sent 0.5 testnet BTC to that address. **Don't lose this information** - we'll need to use the `privateKey` field later on.
+You'll be sent 0.01 testnet BTC to that address. **Don't lose this information** - we'll need to use the `privateKey` field later on.
 
 Now, we need to configure out node to use this Bitcoin keychain. In the `stacks-blockchain` folder, create a new file called `testnet/stacks-node/conf/testnet-miner-conf.toml`.
 
